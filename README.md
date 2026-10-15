@@ -1,4 +1,4 @@
-# learningadventure
+# Learning Adventure
 AI-based assistants to generate personalized exercises, provide feedback on solutions, and adapt to individual learning preferences. 
 
 # You have to create an .env file in the backend, look at the src/backend/.env.example
