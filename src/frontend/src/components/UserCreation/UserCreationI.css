@@ -1,0 +1,50 @@
+
+
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #3c4043;
+}
+
+.input-group input {
+  padding: 14px 16px;
+  border-radius: 8px; /* Slightly squarer than the chat pill shape */
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input-group input:focus {
+  border-color: #1a73e8; /* Matches your chat button color */
+}
+
+.submit-button {
+  padding: 14px;
+  margin-top: 8px;
+  border-radius: 8px;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #1557b0;
+}
+
+.error-text {
+  color: #d93025;
+  font-size: 14px;
+  margin-top: -12px;
+}
