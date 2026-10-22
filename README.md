@@ -29,7 +29,7 @@ npm install
 npm run dev
 ```
 
-# Visit Frontend using default Address```http://localhost:5173/``` and use the button on the bottom left to login
+# Visit ```http://localhost:5173/``` and use the login button on the bottom left
 ```
 matriculation_number="9999999",
 password= "Ganyu.01Emilie.02Fehler.03"
