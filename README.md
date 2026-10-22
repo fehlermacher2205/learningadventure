@@ -34,9 +34,4 @@ npm run dev
 matriculation_number="9999999",
 password= "Ganyu.01Emilie.02Fehler.03"
 ```
-# You will need an account with admin rights if you want to create profile/course using the frontend.
 
-## Pleate note that the profile creation using frontend will not allow customized name.
-## This account is created in backend/services/InitServices.py 
-
-# You can visit ```http://0.0.0.0:8000/docs``` to know how the port (backend/main.py to) is created if you are the host machine
