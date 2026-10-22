@@ -34,4 +34,5 @@ npm run dev
 matriculation_number="9999999",
 password= "Ganyu.01Emilie.02Fehler.03"
 ```
-
+# Only admin can create new profile/course, for more details check backend/services/InitServices.py 
+# Host machine can visit ```http://0.0.0.0:8000/docs``` to see how the API is used
