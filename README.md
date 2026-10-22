@@ -36,3 +36,7 @@ password= "99999999"
 ```
 # Only admin can create new profile/course. For more details, check backend/services/InitServices.py
 # Host machine can visit ```http://0.0.0.0:8000/docs``` to see how the API is used
+# Application overview
+![Goals Selection](GoalsSelection.png)
+
+![Learning Progression](LearningProgression.png)
