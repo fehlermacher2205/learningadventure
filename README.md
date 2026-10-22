@@ -1,9 +1,15 @@
 # Learning Adventure
 AI-based assistants to generate personalized exercises, provide feedback on solutions, and adapt to individual learning preferences. 
 # To use this application you require an openAI-api-key, you can get your own at platform.openai.com
-# Create an .env file inside the backend folder, take a look at src/backend/.env.example
+# Create a .env file in the backend folder and replace all three [] with your actual keys.
 ```
-You will have to set MODEL, OPENAI_API_KEY, OPENAI_API_BASE in the .env you just created
+DATABASE_URL=sqlite:///./database.db
+API_PREFIX=/api
+DEBUG=True
+ALLOWED_ORIGINS=http://localhost:3000,http://localhost:5173
+MODEL = []
+OPENAI_API_KEY= []
+OPENAI_API_BASE= []
 ```
 # Inside backend
 ```
