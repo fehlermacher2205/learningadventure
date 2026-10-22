@@ -5,28 +5,32 @@ AI-based assistants to generate personalized exercises, provide feedback on solu
 ```
 You will have to set MODEL, OPENAI_API_KEY, OPENAI_API_BASE in the .env you just created
 ```
-### You can use genAI4BUW model if you are participating in BUW by visiting
+### You can use genAI4BUW model if you are participating in BUW
 ![alt text](grafik-1.png)
 
-
-
 # Inside backend
-## start the backend
 ```
+# Navigate into the frontend directory
+cd backend
+# Install dependencies and start the api server
 uv sync
 uv run main.py
 ```
 
-# Inside frontend
-## start the frontend
+# Start frontend
 ```
+# Navigate into the frontend directory
+cd frontend
+# Install dependencies and start the development server
 npm install
 npm run dev
 ```
 
-# Visit Frontend default Address```http://localhost:5173/``` to use the frontend, the login button is on the bottom left
-## The default course profile is created at backend/services/InitServices.py 
+# Visit Frontend using default Address```http://localhost:5173/``` 
 ```
+# The login button is on the bottom left
+
+# The default course profile is created at backend/services/InitServices.py 
     werkstatt = Profile(
         id = "code_bar_programmierwerkstatt",
         user_id= 9999999,
