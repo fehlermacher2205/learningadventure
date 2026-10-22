@@ -1,6 +1,6 @@
 # Learning Adventure
 AI-based assistants to generate personalized exercises, provide feedback on solutions, and adapt to individual learning preferences. 
-# To use this application you require an openAI-api-key, you can get your own at platform.openai.com
+# An openAI-api-key is required, you can get your own at platform.openai.com
 # Create a .env file in the backend folder and replace all three [] with your actual keys.
 ```
 DATABASE_URL=sqlite:///./database.db
