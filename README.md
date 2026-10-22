@@ -2,9 +2,10 @@
 AI-based assistants to generate personalized exercises, provide feedback on solutions, and adapt to individual learning preferences. 
 
 # You have to create an .env file in the backend, look at the src/backend/.env.example
-## You will have to set MODEL, OPENAI_API_KEY, OPENAI_API_BASE in the .env you just created
-
-## You can use genAI4BUW model if you are participating in BUW by visiting
+```
+You will have to set MODEL, OPENAI_API_KEY, OPENAI_API_BASE in the .env you just created
+```
+### You can use genAI4BUW model if you are participating in BUW by visiting
 ![alt text](grafik-1.png)
 
 
