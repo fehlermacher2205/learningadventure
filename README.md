@@ -38,6 +38,6 @@ password= "99999999"
 # Host machine can visit ```http://0.0.0.0:8000/docs``` to see how the API is used
 # Application overview
 ## Goals Selection
-![Goals Selection](GoalsSelection.png)
+![Goals Selection](pictures/GoalsSelection.png)
 ## Learning Progression
-![Learning Progression](LearningProgression.png)
+![Learning Progression](pictures/LearningProgression.png)
