@@ -2,6 +2,10 @@ import {useRef, useState, useEffect } from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import "katex/dist/katex.min.css";
+
 import { 
   getStoryAPI, 
   generateNewStoryPageAPI,
@@ -214,34 +218,43 @@ return (
         )}
 
         {/* Chat / Story History */}
-        <div className="chat-history">
-          {story && (
-            <>
-              <div className="story-title">
-                <h2>{story.title}</h2>
-<div className="story-background markdown-content">
-  <ReactMarkdown remarkPlugins={[remarkGfm]}>
-    {story.background || ""}
-  </ReactMarkdown>
-</div>           </div>
+    <div className="chat-history">
+      {story && (
+        <>
+          <div className="story-title">
+            <h2>{story.title}</h2>
 
-              {story.pages?.map((page) => (
-                <div key={page.page_number} className="story-page">
-                  {page.choice_text && (
-                    <div className="story-choice">
-                      <strong></strong> {page.choice_text}
-                    </div>
-                  )}
-<div className="story-content markdown-content">
-  <ReactMarkdown remarkPlugins={[remarkGfm]}>
-    {page.content || ""}
-  </ReactMarkdown>
-</div>
+            <div className="story-background markdown-content">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm, remarkMath]}
+                rehypePlugins={[rehypeKatex]}
+              >
+                {story.background || ""}
+              </ReactMarkdown>
+            </div>
+          </div>
+
+          {story.pages?.map((page) => (
+            <div key={page.page_number} className="story-page">
+              {page.choice_text && (
+                <div className="story-choice">
+                  <strong></strong> {page.choice_text}
                 </div>
-              ))}
-            </>
-          )}
-        </div>
+              )}
+
+              <div className="story-content markdown-content">
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm, remarkMath]}
+                  rehypePlugins={[rehypeKatex]}
+                >
+                  {page.content || ""}
+                </ReactMarkdown>
+              </div>
+            </div>
+          ))}
+        </>
+      )}
+    </div>
 
     <div className="input-area">
           <textarea
