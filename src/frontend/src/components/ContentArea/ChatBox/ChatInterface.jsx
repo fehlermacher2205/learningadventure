@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
+import "./ChatInterface.css"; 
 
 import { 
   getStoryAPI, 
@@ -21,7 +22,8 @@ export default function StoryArea({ setActions }) {
   const [inputText, setInputText] = useState('');
   const textareaRef = useRef(null);
   const [isSending, setIsSending] = useState(false);
-  
+  const [ResetThemeText, setResetThemeText] = useState(''); 
+  const [isPopupOpen, setIsPopupOpen] = useState(false);   
   const navigate = useNavigate();
   const location = useLocation(); 
 
@@ -152,7 +154,7 @@ const handleSubmit = async (textToSubmit) => {
   };
   const handleRegenerateBackground = async () => {
       setIsSending(true); // Tell the UI we are loading
-      const textToSubmit = inputText.trim() || "Regenerate";
+      const textToSubmit = ResetThemeText.trim() || "Regenerate";
       try {
         const response = await generateBackgroundStory(
           story_id,
@@ -166,7 +168,7 @@ const handleSubmit = async (textToSubmit) => {
         console.error("Failed to regenerate background:", err);
         alert("Failed to regenerate the background, please make sure you have set goals and answers. Check the console for details.");
       } finally {
-        setInputText(''); 
+        setResetThemeText(''); 
         setIsSending(false);
         if (textareaRef.current) {
           textareaRef.current.style.height = 'auto';
@@ -196,14 +198,51 @@ return (
           </button>
         )}
       {story?.is_active === true && (
-        <button
-          onClick={handleRegenerateBackground}
+        <button className="button reset"
+          onClick={() => setIsPopupOpen(true)}
           disabled={isSending}
         >
-          {isSending ? "Regenerating..." : "Reset and get new task "}
+          {isSending ? "Regenerating..." : "You can tell me anything!"}
         </button>
       )}
+    {isPopupOpen && (
+      <div className="modal-overlay">
+        <div className="modal-content">
+          <p>
+            You are deleting your current task. The theme can overwrite your settings if overlapped.
 
+          </p>
+          
+          {/* Reset Pop-up text box area */}
+          <div className="input-area">
+            <textarea
+              placeholder="Type your new theme here..."
+              value={ResetThemeText} 
+              onChange={(e) => setResetThemeText(e.target.value)}
+              rows={3}
+            />
+
+            {/* Reset Pop-up buttons */}
+              <button
+                style={{ backgroundColor: '#4e4d43' }}
+                onClick={() => setIsPopupOpen(false)}
+                className="button-cancel"
+              >
+                Cancel
+              </button>
+              
+              <button
+                onClick={() => {
+                  handleRegenerateBackground(ResetThemeText);
+                  setIsPopupOpen(false);
+                }}
+              >
+                Submit
+              </button>
+          </div>
+        </div>
+      </div>
+    )}
 
         
     </div>
